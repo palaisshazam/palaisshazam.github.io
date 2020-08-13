@@ -20,6 +20,14 @@ function startTimer() {
 // detect click on ham menu
 const hamButton = document.querySelector('#ham-toggle-btn');
 const hamBars = document.querySelector('.ham-toggle-btn');
+const overlay = document.querySelector('.overlay');
+
 hamButton.addEventListener('click', function() {
-    hamBars.classList.contains('open') ? hamBars.classList.remove('open') : hamBars.classList.add('open');
+    if (hamBars.classList.contains('open')) {
+        hamBars.classList.remove('open');
+        overlay.classList.remove('visible');
+    } else {
+        hamBars.classList.add('open');
+        overlay.classList.add('visible');   
+    }
 })
