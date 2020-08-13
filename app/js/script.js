@@ -21,13 +21,16 @@ function startTimer() {
 const hamButton = document.querySelector('#ham-toggle-btn');
 const hamBars = document.querySelector('.ham-toggle-btn');
 const overlay = document.querySelector('.overlay');
+const hamMenu = document.querySelector('.nav__ham-menu');
 
 hamButton.addEventListener('click', function() {
     if (hamBars.classList.contains('open')) {
         hamBars.classList.remove('open');
         overlay.classList.remove('visible');
+        hamMenu.classList.remove('visible');
     } else {
         hamBars.classList.add('open');
-        overlay.classList.add('visible');   
+        overlay.classList.add('visible');  
+        hamMenu.classList.add('visible'); 
     }
 })
