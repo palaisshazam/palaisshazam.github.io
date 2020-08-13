@@ -25,7 +25,6 @@ html {font-size:16px;}
 /* ------------------------ Header Styles ---------------------------*/
 header {
     margin:0;
-    height:100vh;
     width:100%;
     overflow:hidden;
     display:flex;
@@ -35,6 +34,7 @@ header {
     display:block;
     overflow: hidden;
     object-fit: cover;
+    z-index:-1;
 }
 .banner img {
     display:block;
@@ -45,7 +45,6 @@ header {
     animation: zoomIn 25s ease-in-out infinite;
 }
 header a {
-    color:#fff;
     text-decoration:none;
 }
 /* ---------------------- End of Header Styles -------------------------*/
@@ -62,6 +61,7 @@ header a {
     left:50%;
     transform: translateX(-50%);
 }
+.nav a {color:#fff;}
 @media (max-width:1098px){
     .nav {left:45%;}
 }
@@ -93,7 +93,7 @@ header a {
 
 
 /* -------------------- Book Now Button Styles -------------------------*/
-.nav__button {
+.nav__button.desktop-btn {
     position: absolute;
     right:-20vw;
     padding: 27px 0px;
@@ -110,23 +110,21 @@ header a {
     cursor:pointer;
     transition: opacity 0.5s ease;
 }
-.nav__button button:hover {
-    opacity: 0.8;
-}
+.nav__button button:hover { opacity: 0.8; }
 /* ----------------- End of Book Now Button Styles ---------------------*/
 
 
 
 
-/* -------------------- Hamburger Menu Styles -------------------------*/
-.nav__ham-menu {
+/* ---------------- Hamburger Menu Toggle Styles -----------------------*/
+.nav__ham-menu-toggle {
     display:flex;
     position:absolute;
     top:3.5rem;
     right:3rem;
-    z-index:3;
+    z-index:1;
 }
-.nav__ham-menu p {
+.nav__ham-menu-toggle p {
     margin-right:10px;
     font-size:1.5rem;
 }
@@ -155,18 +153,36 @@ header a {
 .overlay {
     background: linear-gradient(var(--veryDarkPurple), transparent);
     position:fixed;
-    z-index:1;
+    z-index:0;
     left:0; right:0; top:0; bottom:0;
     transition:all 300ms ease-in-out;
     opacity: 0;
 }
-.visible {opacity: 1;}
-/* ---------------- End of Hamburger Menu Styles ----------------------*/
+
+/* ------------- End of Hamburger Menu Toggle Styles -------------------*/
 
 
 
+/* ------------------- Hamburger Actual Menu Styles --------------------*/
+.nav__ham-menu {
+    background: #fff;
+    border-radius: 10px;
+    z-index:2;
+    color: var(--purpleDark);
+    font-family: 'Cinzel';
+    font-size: 1.25rem;
+    width:100%;
+    margin:8rem 2rem 0;
+    padding:3rem 0;
+    visibility: hidden;
+}
+.nav__ham-menu a {display:block; text-align:center;}
+.nav__ham-menu a:not(:last-child) {margin-bottom:3rem;}
+.nav__button.mobile-btn button {font-size:1rem;padding: 14px 40px;}
 
 
+
+/* ------------- End of Hamburger Actual Menu Styles -------------------*/
 
 
 
@@ -181,6 +197,8 @@ header a {
 @media only screen and (max-width:280px) { /* TINY SCREENS */
 
 }
+/* ----------------------- General Styles ----------------------- */
+.visible {opacity: 1; visibility: visible;}
 @media (max-width: 48em){
     .hide-for-mobile {
         display:none;
