@@ -33,7 +33,6 @@ header {
     position:absolute;
     display:block;
     overflow: hidden;
-    object-fit: cover;
     z-index:-1;
 }
 .banner img {
@@ -172,8 +171,8 @@ header a {
     font-family: 'Cinzel';
     font-size: 1.25rem;
     width:100%;
-    margin:8rem 2rem 0;
-    padding:3rem 0;
+    margin:8rem 1rem 0;
+    padding:2.5rem 0;
     visibility: hidden;
 }
 .nav__ham-menu a {display:block; text-align:center;}
@@ -188,7 +187,7 @@ header a {
 
 
 /* BREAKPOINTS : 280 - 768 - 1024 - 1400*/
-@media only screen and (min-width:768px) and (max-width:1280px){ /* TABLET */
+@media (min-width:768px){ /* TABLET */
 
 }
 @media only screen and (min-width:280px) and (max-width:800px) { /* MOBILE */
@@ -198,13 +197,15 @@ header a {
 
 }
 /* ----------------------- General Styles ----------------------- */
-.visible {opacity: 1; visibility: visible;}
+
+
+.visible {visibility: visible; opacity: 1;}
 @media (max-width: 48em){
     .hide-for-mobile {
         display:none;
     }
 }
-@media (min-width: 48em){
+@media (min-width: 48.001em){
     .hide-for-desktop {
         display:none;
     }
