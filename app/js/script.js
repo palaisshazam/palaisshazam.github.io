@@ -69,7 +69,6 @@ function scrollFunction() {
 
 const normalMenu = document.querySelector('.normal-menu');
 const specialMenu = document.querySelector('.special-menu');
-window.addEventListener('DOMContentLoaded', () => {
   let displayMenu = menu.filter(item => {return (!item.isSpecial);}).map(item => {
     return `<div class="section ${item.id % 2 == 0 ? "two" : "one"}">
 
@@ -118,7 +117,6 @@ window.addEventListener('DOMContentLoaded', () => {
   normalMenu.innerHTML = displayMenu;
   specialMenu.innerHTML = displaySpecial;
 
-});
 
 
   const instagramRegExp = new RegExp(/<script type="text\/javascript">window\._sharedData = (.*)<\/script>/);
