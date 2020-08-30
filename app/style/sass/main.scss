@@ -336,10 +336,11 @@ footer {
         border-bottom: 1px solid var(--secondary);
         padding: 2vh 0;
         margin: 10vh 0 5vh;
+        overflow: hidden;
         .ig-title {
             font-family: 'Cinzel';
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.7rem;
             @include desktop {
                 font-size: 2.5rem;
             }
