@@ -1,65 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="app/styles/main.css">
-        <title>Palais Shazam - Home</title>
-    </head>
-    
-    <body>
-        <header>
-            <div class="overlay hide-for-desktop"></div>
-            <div class="nav__ham-menu hide-for-desktop">
-                <a href="#">Home</a>
-                <a href="#">Services</a>
-                <a href="#">Gallery</a>
-                <a href="#">Contact Us</a>
-                <div class="nav__button mobile-btn">
-                    <a href="#"><button>Book Now</button></a>
-                </div>
-            </div>
-            <div class="nav">
-                <a href="#" id="ham-toggle-btn" class="nav__ham-menu-toggle hide-for-desktop">
-                    <p>Menu</p>
-                    <div class="ham-toggle-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </a>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta name="description" content="Where History Meets Lifestyle — An unforgetable experience at the heart of one of the most ancient cities in the world.">
+    <meta name="author" content="Palais Shazam">
+    <meta property="og:site_name" content="Palais Shazam" />
+    <meta property="og:site" content="www.palaisshazam.com" />
+    <meta property="og:title" content="Palais Shazam - Luxurious Hotel in Fes, Morocco"/>
+    <meta property="og:description" content="Where History Meets Lifestyle — An unforgetable experience at the heart of one of the most ancient cities in the world." />
+    <meta property="og:image" content="https://scontent.frba2-1.fna.fbcdn.net/v/t1.0-9/117314019_4129678607107166_1030247887562919363_o.jpg?_nc_cat=100&_nc_sid=9267fe&_nc_ohc=ggCBIPhPpyYAX-Mklrd&_nc_ht=scontent.frba2-1.fna&oh=acc2ee49fbbfb2674d5e036a2dcc628e&oe=5F70FDE3" />
+    <meta property="og:url" content="www.palaisshazam.com" />
+    <meta property="og:type" content="article" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel='stylesheet' href='app/style/main.css'>
+	<script src="app/js/menu.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<title>Palais Shazam - Menu</title>
+</head>
+<body class="dark">
 
-                <ul class="nav__links hide-for-mobile">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-                <div class="nav__button hide-for-mobile desktop-btn">
-                    <a href="#"><button>Book Now</button></a>
-                </div>
-                
+	<header>
+		<div class="icon">
+			<img src="images/icon_white.png" alt="WHITE ICON" />
+		</div>
+		<img class="switch" src="images/sun.png" alt="SWITCH BUTTON" />
+	</header>
+	
+	<main>
+		<div class="top-main"  data-aos="fade-top">
+            <div class="logo">
+                <img src="images/logo_white.png" alt="LOGO">
             </div>
-            <div class="header-main">
-                <div class="logo">
-                    <img src="images/mainLogo.png" alt="Logo">
-                </div>
-                <div class="under-logo">
-                    <p class="ul__text">An unforgetable experience at the heart of one of the most ancient cities in the world.</p>
-                    <div class="ul__button">
-                        <a href="#"><button>View Our Services</button></a>
-                    </div>
-                </div>   
-            </div>
-            
-            <div class="banner">
-                <img id="bannerPic" src="images/bg.png" alt="BACKGROUND">
-            </div>
-        </header>
-        <main>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sunt asperiores accusamus nihil cumque vel nostrum natus facere aliquam sequi sint doloremque porro quaerat mollitia nisi, unde voluptate aperiam expedita perspiciatis inventore quasi? Eos illo veniam itaque quis mollitia deleniti hic, velit debitis nihil enim sit labore fugit reiciendis a assumenda tenetur praesentium quod ipsam cum nulla aut consequatur laudantium quasi! Neque expedita itaque voluptates porro hic fuga sapiente, nam praesentium facere corrupti illum explicabo temporibus voluptas molestiae deleniti nostrum assumenda suscipit ad sed obcaecati magnam in nemo consequuntur perspiciatis! Reiciendis tempore dicta quibusdam odit illum fugiat, perferendis beatae amet!
-        </main>
-    </body>
-    <script type="text/javascript" src="app/js/script.js"></script>
+            <div class="under-logo">
+                <p class="ul__text">An unforgetable experience at the heart of one of the most ancient cities in the world.</p>
+				<div class="scroll-down-btn">
+					<a href="#main">
+						<img src="images/sd.gif" id="sd1" alt="SD">
+						<p>View Our Menu</p>
+						<img src="images/sd.gif" id="sd2" alt="SD">
+					</a>
+				</div>
+			</div>  
+		</div>
+		<div id="main"></div>
+		
+		<div class="main-content">
+			<div class="page-title" data-aos="fade-left">
+				<p>OUR MENU</p>
+			</div>
+			<div class="normal-menu"></div>
+
+			<div class="page-title" style="margin-top: 10vh" data-aos="fade-right">
+				<p>SPECIAL OFFERS</p>
+			</div>
+			<div class="special-menu"></div>
+
+		</div>
+	</main>
+	<footer>
+		<div class="instagram">
+			<div class="ig-title" data-aos="fade-left">
+				<p>FOLLOW US ON INSTAGRAM</p>
+			</div>
+			<div class="ig-username" data-aos="fade-right">
+				<img src="images/ig_pfp.png" alt="IG PFP">
+				<p><a href="https://instagram.com/palaisshazam/">@palaisshazam</a></p>
+			</div>
+			<div class="last-pictures" data-aos="fade-up">
+				<div class="picture">
+					<img src="images/1.png" alt="IG PIC">
+				</div>
+				<div class="picture">
+					<img src="images/2.png" alt="IG PIC">
+				</div>
+				<div class="picture hfts">
+					<img src="images/3.png" alt="IG PIC">
+				</div>
+				<div class="picture hfts hide-for-mobile">
+					<img src="images/4.png" alt="IG PIC">
+				</div>
+				<div class="picture hfts hide-for-mobile">
+					<img src="images/5.png" alt="IG PIC">
+				</div>
+			</div>
+		</div>
+		<div class="contact-info">
+			<div class="adresses" data-aos="fade-left">
+				<p>41 Derb Benmouaz, Talaa Kebira, Fes, 30000</p>
+				<p><a href="mailto:palaisshazam@gmail.com">palaisshazam@gmail.com</a></p>
+				<p>Tel.: 06 61 51 90 14</p>
+			</div>
+			<div class="bottom-bar">
+				<div class="social-media">
+					<a href="https://www.facebook.com/palaisshazam">
+						<img src="images/fb_icon.png" class="fb-icon" alt="FACEBOOK">
+					</a>
+					<a href="https://www.instagram.com/palaisshazam/">
+						<img src="images/ig_icon.png" class="ig-icon"  alt="INSTAGRAM">
+					</a>
+					<a href="https://wa.me/212661519014">
+						<img src="images/wts_icon.png" class="wts-icon"  alt="WHATSAPP">
+					</a>
+					<a href="emailto:palaisshazam@gmail.com">
+						<img src="images/email_icon.png" class="email-icon"  alt="EMAIL">
+					</a>
+				</div>
+				<div class="copyright">
+					&copy; 2020 - Palais Shazam
+				</div>
+			</div>
+			
+		</div>
+	</footer>
+
+	<script src='app/js/script.js'></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
 </html>
