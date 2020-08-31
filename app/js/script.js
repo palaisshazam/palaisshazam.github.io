@@ -67,53 +67,56 @@ function scrollFunction() {
     }
   }
 
-const normalMenu = document.querySelector('.normal-menu');
-const specialMenu = document.querySelector('.special-menu');
-  let displayMenu = menu.filter(item => {return (!item.isSpecial);}).map(item => {
-    return `<div class="section ${item.id % 2 == 0 ? "two" : "one"}">
 
-      <div class="section__image" data-aos="${item.id % 2 == 0 ? "fade-right" : "fade-left"}">
-        <img src="${item.image}" alt="${item.title}" />
-      </div>
-      <div class="section__text" data-aos="${item.id % 2 == 0 ? "fade-left" : "fade-right"}">
-        <div class="title">
-          <h3>${item.title}</h3>
+window.addEventListener('DOMContentLoaded', () => {
+    const normalMenu = document.querySelector('.normal-menu');
+    const specialMenu = document.querySelector('.special-menu');
+      let displayMenu = menu.filter(item => {return (!item.isSpecial);}).map(item => {
+        return `<div class="section ${item.id % 2 == 0 ? "two" : "one"}">
+
+          <div class="section__image" data-aos="${item.id % 2 == 0 ? "fade-right" : "fade-left"}">
+            <img src="${item.image}" alt="${item.title}" />
+          </div>
+          <div class="section__text" data-aos="${item.id % 2 == 0 ? "fade-left" : "fade-right"}">
+            <div class="title">
+              <h3>${item.title}</h3>
+            </div>
+            <div class="description">
+              <p>${item.description}</p>	
+            </div>
+            <div class="price">
+              <h4>${item.price}DH</h4>
+            </div>	
+          </div>
+
+        </div>`;
+      });
+      let displaySpecial = menu.filter(item => {return (item.isSpecial);}).map(item => {
+        return `<div class="section ${item.id % 2 == 0 ? "two" : "one"}">
+
+        <div class="section__image" data-aos="${item.id % 2 == 0 ? "fade-right" : "fade-left"}">
+          <img src="${item.image}" alt="${item.title}" />
         </div>
-        <div class="description">
-          <p>${item.description}</p>	
+        <div class="section__text" data-aos="${item.id % 2 == 0 ? "fade-left" : "fade-right"}">
+          <div class="title">
+            <h3>${item.title}</h3>
+          </div>
+          <div class="description">
+            <p>${item.description}</p>	
+          </div>
+          <div class="price">
+            <h4><strike>${item.price}DH</strike> ${item.specialPrice}DH</h4>
+            <h4>${item.specialComment}</h4>
+          </div>	
         </div>
-        <div class="price">
-          <h4>${item.price}DH</h4>
-        </div>	
-      </div>
-      
-    </div>`;
-  });
-  let displaySpecial = menu.filter(item => {return (item.isSpecial);}).map(item => {
-    return `<div class="section ${item.id % 2 == 0 ? "two" : "one"}">
 
-    <div class="section__image" data-aos="${item.id % 2 == 0 ? "fade-right" : "fade-left"}">
-      <img src="${item.image}" alt="${item.title}" />
-    </div>
-    <div class="section__text" data-aos="${item.id % 2 == 0 ? "fade-left" : "fade-right"}">
-      <div class="title">
-        <h3>${item.title}</h3>
-      </div>
-      <div class="description">
-        <p>${item.description}</p>	
-      </div>
-      <div class="price">
-        <h4><strike>${item.price}DH</strike> ${item.specialPrice}DH</h4>
-        <h4>${item.specialComment}</h4>
-      </div>	
-    </div>
-    
-  </div>`;
-  });
+      </div>`;
+      });
 
-  displayMenu = displayMenu.join('\r\n');
-  displaySpecial = displaySpecial.join('\r\n');
+      displayMenu = displayMenu.join('\r\n');
+      displaySpecial = displaySpecial.join('\r\n');
 
-  normalMenu.innerHTML = displayMenu;
-  specialMenu.innerHTML = displaySpecial;
+      normalMenu.innerHTML = displayMenu;
+      specialMenu.innerHTML = displaySpecial;
 
+});
